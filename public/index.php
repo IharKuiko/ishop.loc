@@ -17,4 +17,4 @@ new \wfm\App();
 //echo 'Hello!';
 //echo $test;
 
-debug(\wfm\Router::getRoutes());
+//debug(\wfm\Router::getRoutes());
