@@ -2,14 +2,21 @@
 
 namespace app\controllers;
 
+
+use app\models\Main;
+use RedBeanPHP\R;
 use wfm\Controller;
 
+/** @property Main $model */
 class MainController extends Controller
 {
+
     public function indexAction()
     {
-//        $this->layout = 'test';
-        $this->setMeta('<h1>Main page</h1>>', 'Description', 'keywords');
-        $this->set(['test' => 'TEST VAR']);
+        $names = $this->model->get_names();
+        $one_name = R::getRow( 'SELECT * FROM name WHERE id = 2');
+        $this->setMeta('Главная страница', 'Description...', 'keywords...');
+        $this->set(compact('names'));
     }
+
 }
